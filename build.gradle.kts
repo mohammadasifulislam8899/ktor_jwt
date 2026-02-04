@@ -14,13 +14,12 @@ application {
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=$isDevelopment")
 }
 
-// ✅ এটা Add করুন - Render এর জন্য Fat JAR
+
 ktor {
     fatJar {
-        archiveFileName.set("app.jar")
+        archiveFileName.set("ktor-jwt-all.jar")
     }
 }
-
 kotlin {
     jvmToolchain(17)
 }
