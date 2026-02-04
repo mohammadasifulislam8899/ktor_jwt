@@ -1,0 +1,82 @@
+[versions]
+kotlin = "2.3.0"
+ktor = "3.4.0"
+logback = "1.4.14"
+kmongo = "5.5.1"
+koin = "4.1.1"   # keep stable; upgrade to 4.x beta if needed
+bcrypt = "0.10.2"
+commons-email = "1.6.0"
+dotenv = "6.5.1"
+
+[libraries]
+# Ktor Core
+ktor-server-core = { module = "io.ktor:ktor-server-core", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty", version.ref = "ktor" }
+ktor-server-host-common = { module = "io.ktor:ktor-server-host-common", version.ref = "ktor" }
+
+# Serialization
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation", version.ref = "ktor" }
+
+# Authentication
+ktor-server-auth = { module = "io.ktor:ktor-server-auth", version.ref = "ktor" }
+ktor-server-auth-jwt = { module = "io.ktor:ktor-server-auth-jwt", version.ref = "ktor" }
+
+# Plugins
+ktor-server-call-logging = { module = "io.ktor:ktor-server-call-logging", version.ref = "ktor" }
+ktor-server-call-id = { module = "io.ktor:ktor-server-call-id", version.ref = "ktor" }
+ktor-server-status-pages = { module = "io.ktor:ktor-server-status-pages", version.ref = "ktor" }
+ktor-server-rate-limit = { module = "io.ktor:ktor-server-rate-limit", version.ref = "ktor" }
+ktor-server-cors = { module = "io.ktor:ktor-server-cors", version.ref = "ktor" }
+ktor-server-request-validation = { module = "io.ktor:ktor-server-request-validation", version.ref = "ktor" }
+
+# Logging
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+
+# MongoDB
+kmongo-coroutine = { module = "org.litote.kmongo:kmongo-coroutine", version.ref = "kmongo" }
+
+# Dependency Injection
+koin-ktor = { module = "io.insert-koin:koin-ktor", version.ref = "koin" }
+koin-logger-slf4j = { module = "io.insert-koin:koin-logger-slf4j", version.ref = "koin" }
+
+# Security
+bcrypt = { module = "at.favre.lib:bcrypt", version.ref = "bcrypt" }
+
+# Email
+commons-email = { module = "org.apache.commons:commons-email", version.ref = "commons-email" }
+
+# Environment
+dotenv-kotlin = { module = "io.github.cdimascio:dotenv-kotlin", version.ref = "dotenv" }
+
+# Testing
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host", version.ref = "ktor" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+koin-test = { module = "io.insert-koin:koin-test", version.ref = "koin" }
+
+[bundles]
+ktor-server = [
+    "ktor-server-core",
+    "ktor-server-netty",
+    "ktor-server-host-common",
+    "ktor-server-content-negotiation",
+    "ktor-serialization-kotlinx-json",
+    "ktor-server-auth",
+    "ktor-server-auth-jwt",
+    "ktor-server-call-logging",
+    "ktor-server-call-id",
+    "ktor-server-status-pages",
+    "ktor-server-rate-limit",
+    "ktor-server-cors",
+    "ktor-server-request-validation"
+]
+
+koin = [
+    "koin-ktor",
+    "koin-logger-slf4j"
+]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+kotlin-plugin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
