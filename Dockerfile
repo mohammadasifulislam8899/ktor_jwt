@@ -1,5 +1,5 @@
-# Dockerfile
-FROM gradle:8.5-jdk17 AS build
+# শুধু এই লাইন পরিবর্তন করুন - 8.5 থেকে 8.11
+FROM gradle:8.11-jdk17 AS build
 
 WORKDIR /app
 
